@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:messages errorClass="error-style" infoClass="infoMessage" layout="table"/>
+            <h:outputText value="#{bundle.EditRecordnotaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form>
+                <section class="crud">
+                   <hgroup class="input-field col s6">
+                        <h:inputText id="calificacion" value="#{recordnotaController.selected.calificacion}" title="#{bundle.EditRecordnotaTitle_calificacion}" />
+                        <h:outputLabel value="#{bundle.EditRecordnotaLabel_calificacion}" for="calificacion" />       
+                   </hgroup>
+                   
+                   <hgroup>
+                        <h:outputLabel value="#{bundle.EditRecordnotaLabel_idestudiante}" for="idestudiante" />
+                        <br/>
+                        <br/>
+                        <h:selectOneMenu class="browser-default" id="idestudiante" value="#{recordnotaController.selected.idestudiante}" title="#{bundle.EditRecordnotaTitle_idestudiante}" >
+                            <f:selectItems value="#{estudianteController.itemsAvailableSelectOne}"/>
+                        </h:selectOneMenu>
+                    </hgroup>
+                    <br/>
+                    <hgroup>
+                        <h:outputLabel value="#{bundle.EditRecordnotaLabel_idmateria}" for="idmateria" />
+                        <br/>
+                        <br/>
+                        <h:selectOneMenu class="browser-default" id="idmateria" value="#{recordnotaController.selected.idmateria}" title="#{bundle.EditRecordnotaTitle_idmateria}" >
+                            <f:selectItems value="#{materiaController.itemsAvailableSelectOne}"/>
+                        </h:selectOneMenu>
+                    </hgroup>
+                    <br/>
+                    
+                    <hgroup>
+                        <h:outputLabel value="#{bundle.EditRecordnotaLabel_idperiodo}" for="idperiodo" />
+                        <br/>
+                        <br/>
+                        <h:selectOneMenu class="browser-default" id="idperiodo" value="#{recordnotaController.selected.idperiodo}" title="#{bundle.EditRecordnotaTitle_idperiodo}" >
+                            <f:selectItems value="#{periodoController.itemsAvailableSelectOne}"/>
+                        </h:selectOneMenu>
+                    </hgroup>
+                    
+                </section>
+                <br/>
+                <h:commandLink class="waves-effect waves-light btn-small btn-verde" action="#{recordnotaController.update}" value="#{bundle.EditRecordnotaSaveLink}"/>
+                <br />
+                <br />
+                <h:link class="waves-effect waves-light btn-small btn-rojo" outcome="View" value="#{bundle.EditRecordnotaViewLink}"/>
+                <br />
+                <br/>
+                <h:commandLink class="waves-effect waves-light btn-small btn-azul" action="#{recordnotaController.prepareList}" value="#{bundle.EditRecordnotaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link class="waves-effect waves-light btn-small btn-gris" outcome="List" value="#{bundle.EditRecordnotaIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

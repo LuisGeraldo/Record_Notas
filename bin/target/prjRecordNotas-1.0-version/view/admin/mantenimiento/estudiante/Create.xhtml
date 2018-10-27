@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEstudianteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid class="input" columns="2">
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_matricula}" for="matricula" />
+                    <h:inputText id="matricula" value="#{estudianteController.selected.matricula}" title="#{bundle.CreateEstudianteTitle_matricula}" required="true" requiredMessage="#{bundle.CreateEstudianteRequiredMessage_matricula}"/>
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_primernombre}" for="primernombre" />
+                    <h:inputText id="primernombre" value="#{estudianteController.selected.primernombre}" title="#{bundle.CreateEstudianteTitle_primernombre}" required="true" requiredMessage="#{bundle.CreateEstudianteRequiredMessage_primernombre}"/>
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_segundonombre}" for="segundonombre" />
+                    <h:inputText id="segundonombre" value="#{estudianteController.selected.segundonombre}" title="#{bundle.CreateEstudianteTitle_segundonombre}" />
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_primerapellido}" for="primerapellido" />
+                    <h:inputText id="primerapellido" value="#{estudianteController.selected.primerapellido}" title="#{bundle.CreateEstudianteTitle_primerapellido}" required="true" requiredMessage="#{bundle.CreateEstudianteRequiredMessage_primerapellido}"/>
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_segundoapellido}" for="segundoapellido" />
+                    <h:inputText id="segundoapellido" value="#{estudianteController.selected.segundoapellido}" title="#{bundle.CreateEstudianteTitle_segundoapellido}" />
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_cedula}" for="cedula" />
+                    <h:inputText id="cedula" value="#{estudianteController.selected.cedula}" title="#{bundle.CreateEstudianteTitle_cedula}" required="true" requiredMessage="#{bundle.CreateEstudianteRequiredMessage_cedula}"/>
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_sexo}" for="sexo" />
+                    <h:inputText id="sexo" value="#{estudianteController.selected.sexo}" title="#{bundle.CreateEstudianteTitle_sexo}" />
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{estudianteController.selected.email}" title="#{bundle.CreateEstudianteTitle_email}" required="true" requiredMessage="#{bundle.CreateEstudianteRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_telefono}" for="telefono" />
+                    <h:inputText id="telefono" value="#{estudianteController.selected.telefono}" title="#{bundle.CreateEstudianteTitle_telefono}" required="true" requiredMessage="#{bundle.CreateEstudianteRequiredMessage_telefono}"/>
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{estudianteController.selected.direccion}" title="#{bundle.CreateEstudianteTitle_direccion}" />
+                    
+                    <h:outputLabel value="#{bundle.CreateEstudianteLabel_idcarrera}" for="idcarrera" />
+                          
+                    <h:selectOneMenu id="idcarrera" value="#{estudianteController.selected.idcarrera}" title="#{bundle.CreateEstudianteTitle_idcarrera}" >
+                        <f:selectItems value="#{carreraController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-verde" action="#{estudianteController.create}" value="#{bundle.CreateEstudianteSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-azul" action="#{estudianteController.prepareList}" value="#{bundle.CreateEstudianteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link class="waves-effect waves-light btn-small btn-gris" outcome="List" value="#{bundle.CreateEstudianteIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

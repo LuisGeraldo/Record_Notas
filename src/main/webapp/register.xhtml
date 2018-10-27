@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+   <h:head>
+        <title>Facelet Title</title>
+        <link type="text/css" rel="stylesheet" href="resources/css/form-estilos.css"/>
+        
+    </h:head>
+    <h:body>
+        <h:form>
+            <section class="frm-login">  
+                <hgroup>
+                    <h1>Create Account!</h1>
+                    <p>Log in to access your profile, settings, published projects and Snacks.</p>
+                </hgroup>
+            
+                <fieldset>
+                    <h:messages globalOnly="true" infoStyle="color: green" errorStyle="color: red"/>
+                    <label for="email">EMAIL</label>
+                    <h:inputText id="email" value="#{registerController.usuario.email}" required="true" requiredMessage="Campo requerido"/><br/>
+                    <br/>
+                    
+                    <h:message class="error" for="email"/>
+                    
+                    <label for="password">PASSWORD</label>
+                    <h:inputSecret id="password" value="#{registerController.usuario.pass}" required="true" requiredMessage="Campo requirido"/><br />
+                    <br/>
+                    <h:message class="error" for="password"/> 
+                    
+                    <h:commandButton class="submint" action="#{registerController.registrarse()}" value="Registrarse" id="iniciar-sesion" />
+                    <br/>
+                    <br/>
+                    <p>Tienes una cuenta!? <h:link outcome="index" value="Iniciar sesion !"/></p>
+                </fieldset>
+            </section>
+        </h:form>
+     </h:body>
+</html>

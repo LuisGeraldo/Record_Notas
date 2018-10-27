@@ -1,0 +1,181 @@
+
+#top {
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    padding: 100px;
+}
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}
+
+#left {
+    float: left;
+    background-color: #ffffff;
+    padding: 5px;
+    width: 300px;
+    height: 100vh;
+    box-shadow: 2px 2px 2px #036fab;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {
+    width: 80% !important;
+    position: relative;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+
+
+.left_content {
+    padding: 5px;
+    margin-left: 350px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  color: black;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+.input{
+    width: 550px;
+}
+
+.panel a{
+    padding: 5px;
+    display: block;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.panel a:hover{
+    background: #036fab;
+    color: white;
+}
+
+fieldset{
+    width: 300px;
+}
+
+.btn-verde{
+    background: yellowgreen !important;   
+}
+
+.btn-rojo{
+    background: #e33b06;
+}
+
+.btn-azul{
+    background: #036fab;
+}
+
+.btn-gris{
+    background:#AFAFAF;
+}
+
+.crud{
+    width: 600px;    
+}
+
+.label-box{
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.browser-default{
+    border-bottom: 1px solid #AFAFAF;
+}
+
+.header h1{
+    display: inline;
+}
+
+
+.inf-perfil{
+    display: inline;
+    float: right;
+}
+
+.inf-perfil img{
+    display: inline;
+    width: 45px;
+    float: right;
+    margin: 0;
+    margin-top: 19px;
+}
+
+.inf-perfil img:hover{
+   background: rgba(255, 255, 255, 0.2);
+   border-radius: 50px;
+   
+}
+
+.email{
+    display: inline;
+    float: right;
+    padding: 20px;
+    font-size: 17px;
+    margin-top:  10px;
+}
+
+
+.error-style{
+    position: absolute;
+    font-size: 15px;
+    right: 15px;
+    display: inline;
+    background: red !important;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error-style td, tr{
+    margin: 0px !important;
+    padding: 0px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.infoMessage td, tr{
+    margin: 0px !important;
+    padding: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 15px !important;
+}
+
+
+.infoMessage{
+    position: absolute;
+    font-size: 15px;
+    right: 15px;
+    display: inline;
+    background: limegreen;
+    color: white;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+}

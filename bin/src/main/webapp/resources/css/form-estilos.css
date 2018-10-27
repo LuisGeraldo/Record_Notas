@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 19, 2018, 2:24:27 AM
+    Author     : luis
+*/
+
+form fieldset{
+    margin: 10px auto;
+    width: 430px;
+    border: 0px;
+}
+
+fieldset input{
+    width: 410px;
+    border-radius: 5px;
+    border: 0.5px solid;
+    border-color: rgba(3, 111, 171, 0.2);
+    background: none;
+    font-size: 17px;
+    padding: 20px;
+}
+
+.frm-login{
+    margin: 130px auto;
+    width: 500px;
+}
+
+.frm-login h1{
+    text-align: center;
+    font-size: 35px;
+    font-family: "Arial";
+}
+
+.frm-login p{
+    text-align: center;
+    font-size: 17px;
+    font-family: "Arial";
+    width: 80%;
+    margin: 0 auto;
+}
+
+label{
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Arial";
+}
+
+.submint{
+    background: #036fab;
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 450px !important;
+}
+
+.error{
+    color: red;
+    display: block;
+    margin-bottom: 13px;
+    font-family: "Arial";
+    font-size: 16px;
+/*    list-style: none;
+    list-style: */
+}
+
+
+
+
+
+
+
+
+
+

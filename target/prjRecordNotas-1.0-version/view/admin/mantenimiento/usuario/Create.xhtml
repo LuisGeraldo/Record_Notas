@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:messages errorClass="error-style" infoClass="infoMessage" layout="table"/>
+            <h:outputText value="#{bundle.CreateUsuarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form>
+                <article class="crud">
+                        <hgroup class="input-field col s6">
+                          <h:inputText id="email" value="#{usuarioController.selected.email}" title="#{bundle.CreateUsuarioTitle_email}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_email}"  class="validate"/>
+                          <h:outputLabel value="#{bundle.CreateUsuarioLabel_email}" for="email" />
+                        </hgroup>
+                    
+                        <hgroup class="input-field col s6">
+                          <h:inputSecret id="pass" value="#{usuarioController.selected.pass}" title="#{bundle.CreateUsuarioTitle_pass}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_pass}"/> 
+                          <h:outputLabel value="#{bundle.CreateUsuarioLabel_pass}" for="pass" />
+                        </hgroup>
+                    
+           
+                        <hgroup>
+                           <h:outputLabel class="label-box" value="#{bundle.CreateUsuarioLabel_idNombre}" for="idNombre" />
+                           <br/>
+                           <br/>
+                           <h:selectOneMenu id="idNombre"  class="browser-default" value="#{usuarioController.selected.idNombre}" title="#{bundle.CreateUsuarioTitle_idNombre}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_idNombre}">
+                              <f:selectItems value="#{tipoUsuarioController.itemsAvailableSelectOne}"/>
+                           </h:selectOneMenu> 
+                       </hgroup>
+                </article>
+                <br />
+                <br />
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-verde" action="#{usuarioController.create}" value="#{bundle.CreateUsuarioSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-azul" action="#{usuarioController.prepareList}" value="#{bundle.CreateUsuarioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link class="waves-effect waves-light btn-small btn-gris" outcome="List" value="#{bundle.CreateUsuarioIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

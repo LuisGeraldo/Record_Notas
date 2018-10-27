@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:messages errorClass="error-style" infoClass="infoMessage" layout="table"/>
+            <h:outputText value="#{bundle.EditPeriodoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form>
+                <section class="crud">
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="nombre" value="#{periodoController.selected.nombre}" title="#{bundle.EditPeriodoTitle_nombre}" required="true" requiredMessage="#{bundle.EditPeriodoRequiredMessage_nombre}"/>
+                        <h:outputLabel value="#{bundle.EditPeriodoLabel_nombre}" for="nombre" />  
+                    </hgroup>
+                    
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="descripcion" value="#{periodoController.selected.descripcion}" title="#{bundle.EditPeriodoTitle_descripcion}" />
+                        <h:outputLabel value="#{bundle.EditPeriodoLabel_descripcion}" for="descripcion" />    
+                    </hgroup>
+                    
+                </section>
+                <h:commandLink class="waves-effect waves-light btn-small btn-verde" action="#{periodoController.update}" value="#{bundle.EditPeriodoSaveLink}"/>
+                <br />
+                <br />
+                <h:link class="waves-effect waves-light btn-small btn-rojo" outcome="View" value="#{bundle.EditPeriodoViewLink}"/>
+                <br />
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-azul" action="#{periodoController.prepareList}" value="#{bundle.EditPeriodoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link class="waves-effect waves-light btn-small btn-gris" outcome="List" value="#{bundle.EditPeriodoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

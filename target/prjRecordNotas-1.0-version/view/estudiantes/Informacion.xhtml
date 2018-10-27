@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../WEB-INF/template/estudianteTempleate.xhtml">
+
+            <ui:define name="content">
+               <section class="record">
+            
+            <article>
+                <h:form>
+                    <h:link class="email" outcome="Periodo" value="Mi informacion"/>
+                    <h1>Mi informacion</h1>
+                   
+                     <hgroup class="input-field col s6">
+                        <h:inputText id="matricula" value="#{estudianteController.selected.matricula}" title="#{bundle.EditEstudianteTitle_matricula}" required="true" requiredMessage="#{bundle.EditEstudianteRequiredMessage_matricula}"/>
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_matricula}" for="matricula" />
+                     </hgroup>
+                    
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="primernombre" value="#{estudianteController.selected.primernombre}" title="#{bundle.EditEstudianteTitle_primernombre}" required="true" requiredMessage="#{bundle.EditEstudianteRequiredMessage_primernombre}"/>
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_primernombre}" for="primernombre" />  
+                    </hgroup>
+                    
+                     <hgroup class="input-field col s6">
+                        <h:inputText id="segundonombre" value="#{estudianteController.selected.segundonombre}" title="#{bundle.EditEstudianteTitle_segundonombre}" />
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_segundonombre}" for="segundonombre" /> 
+                     </hgroup>
+                    
+                     <hgroup class="input-field col s6">
+                        <h:inputText id="primerapellido" value="#{estudianteController.selected.primerapellido}" title="#{bundle.EditEstudianteTitle_primerapellido}" required="true" requiredMessage="#{bundle.EditEstudianteRequiredMessage_primerapellido}"/>
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_primerapellido}" for="primerapellido" />
+                     </hgroup>
+                       
+                     <hgroup class="input-field col s6">
+                        <h:inputText id="segundoapellido" value="#{estudianteController.selected.segundoapellido}" title="#{bundle.EditEstudianteTitle_segundoapellido}" />
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_segundoapellido}" for="segundoapellido" /> 
+                     </hgroup>
+                    
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="cedula" value="#{estudianteController.selected.cedula}" title="#{bundle.EditEstudianteTitle_cedula}" required="true" requiredMessage="#{bundle.EditEstudianteRequiredMessage_cedula}"/>
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_cedula}" for="cedula" />
+                    </hgroup>          
+      
+                    <hgroup>
+                        <h:outputLabel class="label-box" value="#{bundle.CreateEstudianteLabel_sexo}" for="sexo"/>
+                        <br/>
+                        <h:selectOneMenu class="browser-default" value="#{estudianteController.selected.sexo}" title="#{bundle.CreateEstudianteLabel_sexo}" >
+                               <f:selectItem itemValue="M" itemLabel="Masculino" />
+                               <f:selectItem itemValue="F" itemLabel="Femenino" />
+                        </h:selectOneMenu>
+                    </hgroup>
+                           
+                    
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="email" value="#{infSession.usuario.email}" title="#{bundle.EditEstudianteTitle_email}" required="true" requiredMessage="#{bundle.EditEstudianteRequiredMessage_email}"/>
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_email}" for="email" />        
+                    </hgroup>
+                   
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="telefono" value="#{estudianteController.selected.telefono}" title="#{bundle.EditEstudianteTitle_telefono}" required="true" requiredMessage="#{bundle.EditEstudianteRequiredMessage_telefono}"/>
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_telefono}" for="telefono" />   
+                    </hgroup>
+                    
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="direccion" value="#{estudianteController.selected.direccion}" title="#{bundle.EditEstudianteTitle_direccion}" />
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_direccion}" for="direccion" />
+                    </hgroup>
+                    
+                    <hgroup>
+                        <h:outputLabel value="#{bundle.EditEstudianteLabel_idcarrera}" for="idcarrera" />
+                        <br />    
+                        <h:selectOneMenu class="browser-default" id="idcarrera" value="#{estudianteController.selected.idcarrera}" title="#{bundle.EditEstudianteTitle_idcarrera}" >
+                            <f:selectItems value="#{carreraController.itemsAvailableSelectOne}"/>
+                        </h:selectOneMenu>
+                    </hgroup>  
+               </h:form> 
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-azul"  action="#{carreraController.create}" value="Actualizar" />
+                <br />
+                <br />
+            </article>
+        </section>    
+      </ui:define>
+ </ui:composition>
+    </body>
+</html>

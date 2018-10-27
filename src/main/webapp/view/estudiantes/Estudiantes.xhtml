@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../WEB-INF/template/estudianteTempleate.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <section class="record">
+            
+            <article>
+                <h:form>
+                    <h:link class="email" outcome="Informacion" value="Mi informacion"/>
+                    <h1>Record</h1>
+                   
+                    <hgroup>
+                        <h:outputLabel class="label-box" value="#{bundle.CreateRecordnotaLabel_idperiodo}" for="idperiodo" />
+                        <br/>
+                        <br/>
+                        <h:selectOneMenu class="browser-default" id="idperiodo" value="#{recordnotaController.selected.idperiodo}" title="#{bundle.CreateRecordnotaTitle_idperiodo}" >
+                            <f:selectItems value="#{periodoController.itemsAvailableSelectOne}"/>
+                        </h:selectOneMenu>
+                    </hgroup> 
+                    
+                     <br/>
+                    
+                    <hgroup>
+                        <h:outputLabel class="label-box" value="#{bundle.CreateRecordnotaLabel_idmateria}" for="idmateria" />
+                        <br/>
+                        <br/>
+                        <h:selectOneMenu class="browser-default" id="idmateria" value="#{recordnotaController.selected.idmateria}" title="#{bundle.CreateRecordnotaTitle_idmateria}" >
+                            <f:selectItems value="#{materiaController.itemsAvailableSelectOne}"/>
+                        </h:selectOneMenu>
+                    </hgroup>
+                    
+                    <br/> 
+                    <hgroup class="input-field col s6">
+                       <h:inputText id="calificacion" value="#{recordnotaController.selected.calificacion}" title="#{bundle.CreateRecordnotaTitle_calificacion}" />
+                       <h:outputLabel value="#{bundle.CreateRecordnotaLabel_calificacion}" for="calificacion" />    
+                    </hgroup>      
+               </h:form> 
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-verde"  action="#{carreraController.create}" value="#{bundle.CreateCarreraSaveLink}" />
+                <br />
+                <br />
+            </article>
+        </section>    
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:messages errorClass="error-style" infoClass="infoMessage" layout="table"/>
+            <h:outputText value="#{bundle.CreateMateriaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form>
+                <section class="crud">
+                    
+                    <hgroup class="input-field col s6">
+                       <h:inputText id="codigo" value="#{materiaController.selected.codigo}" title="#{bundle.CreateMateriaTitle_codigo}" required="true" requiredMessage="#{bundle.CreateMateriaRequiredMessage_codigo}"/>   
+                       <h:outputLabel value="#{bundle.CreateMateriaLabel_codigo}" for="codigo" />
+                    </hgroup>
+                    
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="nombre" value="#{materiaController.selected.nombre}" title="#{bundle.CreateMateriaTitle_nombre}" required="true" requiredMessage="#{bundle.CreateMateriaRequiredMessage_nombre}"/>
+                        <h:outputLabel value="#{bundle.CreateMateriaLabel_nombre}" for="nombre" />
+                    </hgroup>
+                    
+                    <hgroup class="input-field col s6">
+                        <h:inputText id="descripcion" value="#{materiaController.selected.descripcion}" title="#{bundle.CreateMateriaTitle_descripcion}" />
+                        <h:outputLabel value="#{bundle.CreateMateriaLabel_descripcion}" for="descripcion" />
+                    </hgroup>
+                
+                </section>
+                <br />
+                <h:commandLink  class="waves-effect waves-light btn-small btn-verde" action="#{materiaController.create}" value="#{bundle.CreateMateriaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink  class="waves-effect waves-light btn-small btn-azul" action="#{materiaController.prepareList}" value="#{bundle.CreateMateriaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link  class="waves-effect waves-light btn-small btn-gris" outcome="List" value="#{bundle.CreateMateriaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:messages errorClass="error-style" infoClass="infoMessage" layout="table"/>
+            <h:outputText value="#{bundle.EditCarreraTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form>
+                <section class="crud"> 
+                   <hgroup class="input-field col s6">
+                        <h:inputText id="codigo" value="#{carreraController.selected.codigo}" title="#{bundle.EditCarreraTitle_codigo}" required="true" requiredMessage="#{bundle.EditCarreraRequiredMessage_codigo}"/>
+                        <h:outputLabel value="#{bundle.EditCarreraLabel_codigo}" for="codigo" />      
+                   </hgroup>
+                    
+                   <hgroup class="input-field col s6">
+                        <h:inputText id="nombre" value="#{carreraController.selected.nombre}" title="#{bundle.EditCarreraTitle_nombre}" required="true" requiredMessage="#{bundle.EditCarreraRequiredMessage_nombre}"/>
+                        <h:outputLabel value="#{bundle.EditCarreraLabel_nombre}" for="nombre" />    
+                   </hgroup>
+                    
+                   <hgroup class="input-field col s6">
+                        <h:inputText id="descripcion" value="#{carreraController.selected.descripcion}" title="#{bundle.EditCarreraTitle_descripcion}" />
+                        <h:outputLabel value="#{bundle.EditCarreraLabel_descripcion}" for="descripcion" />     
+                   </hgroup>
+            </section>
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-verde" action="#{carreraController.update}" value="#{bundle.EditCarreraSaveLink}"/>
+                <br />
+                <br />
+                <h:link class="waves-effect waves-light btn-small btn-rojo" outcome="View" value="#{bundle.EditCarreraViewLink}"/>
+                <br />
+                <br />
+                <h:commandLink class="waves-effect waves-light btn-small btn-azul" action="#{carreraController.prepareList}" value="#{bundle.EditCarreraShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link class="waves-effect waves-light btn-small btn-gris" outcome="List" value="#{bundle.EditCarreraIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
