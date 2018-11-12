@@ -39,15 +39,15 @@ public class ControlAccesoClass implements Serializable{
         }
     }
      
-    public void onlyPostulante(){
+    public void onlyEstudiante(){
         try {
            reference = new SessionReference();
            user = new Usuario();
            
            user = (Usuario) reference.sessionMapGet("usuario");
            
-           if(user == null || !user.getIdNombre().getIdNombre().equals("POSTULANTE")){
-               reference.getFacesContext().getExternalContext().redirect("./../acceso/login.xhtml");
+           if(user == null || !user.getIdNombre().getIdNombre().equals("ESTUDIANTE")){
+               reference.getFacesContext().getExternalContext().redirect("./../../index.xhtml");
            }     
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, "exception");

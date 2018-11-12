@@ -9,6 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
         <h:outputStylesheet name="css/cssLayout.css"/>
+        <f:event type="preRenderView" listener="#{controlAccesoClass.onlyEstudiante()}"/>
         <f:event type="preRenderView" listener="#{infSession.sessionInfo()}" />
 <!--        <h:outputStylesheet name="css/default.css"/>-->
         <title>Estudiante | Record Notas</title>
